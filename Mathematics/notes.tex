@@ -8,6 +8,11 @@
 
 \usepackage{amsmath}
 
+%Removes equation label numbers
+\makeatletter
+\renewcommand\tagform@[1]{}
+\makeatother
+
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{1em}} % custom section break
 
@@ -68,7 +73,7 @@ Let us focus on functions.
     therefore, we can say that
     $$\sin(4x) = 4\sin^2(x)\cos^2(x)$$
 
-    \subsection{$$n$$ Angle Identities}
+    \subsection{$n$ Angle Identities}
     Using De Moivre's theorem it is known that
     \begin{align}
         (|z|\cos{\theta})^n=|z|^n\cos{n\theta}
