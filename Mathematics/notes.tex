@@ -1,21 +1,28 @@
 \documentclass[a4paper]{article}
 
 % Packages
-\usepackage[margin=1.9cm]{geometry} % margin layout
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
 \usepackage{parskip} % needed for un-doing paragraph indentation
 %\usepackage{titlesec}
 
-\usepackage{amsmath}
 
-%Removes equation label numbers
+% Removes equation label numbers
 \makeatletter
 \renewcommand\tagform@[1]{}
 \makeatother
 
+% Theorems and stuff
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{question}{Question}
+
+
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{1em}} % custom section break
-
 
 %\setlength{\parindent}{0pt} % another way to have 0 paragraph indent
 % \par for newlines works as well
@@ -44,6 +51,11 @@
 
 \sectionSpace
 \section{Proof by Induction}
+    \subsection{The Principle of Mathematical Induction}
+    When inducting, we must follow strict protocols. We first have the initial proposition (usually $P(1)$) where we must prove that LHS = RHS. Then we prove the kth case, then the k+1 case. 
+
+    We then conclude that by principle of mathematical induction, what we said is true because we proved it to be. Simple as that.
+
     \subsection{Sequences and Series}
 
 
@@ -57,6 +69,13 @@ Let us focus on functions.
         \item General form: $ax + by = c$
         \item Slope-intercept form: $y = mx + c$
     \end{itemize}
+
+
+    \subsection{Dealing With Infinity}
+    For functions such as the inverse function (1/x), then x cannot be zero otherwise we will have $1/0 = \infty$. 
+    \begin{question}
+        Why is $1/0 = \infty$?
+    \end{question}
 
 
 \sectionSpace
@@ -97,7 +116,8 @@ Let us focus on functions.
 
 \sectionSpace
 \section{Integration}
-
+    \subsection{Substitution}
+    \subsection{By Parts}
 
 
 \sectionSpace
@@ -110,7 +130,6 @@ Let us focus on functions.
 
     Therefore, we can then conclude that:
     $$e^{i\theta} + \sin^2\theta + \cos^2\theta = 0$$
-
     $$\frac{e^{i\theta} + \sin^2\theta}{-\cos^2\theta} = 1$$
     $$-\frac{e^{i\theta}}{\cos^2\theta} -\frac{\sin^2\theta}{\cos^2\theta} = 1$$
     $$-e^{i\theta}\sec^2\theta -\tan^2\theta = 1$$
@@ -122,6 +141,6 @@ Let us focus on functions.
 
 \sectionSpace
 \section{Linear Algebruh}
-
+    \subsection{Vectors}
 
 \end{document}
