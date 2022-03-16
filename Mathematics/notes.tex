@@ -6,6 +6,8 @@
 \usepackage{parskip} % needed for un-doing paragraph indentation
 %\usepackage{titlesec}
 
+\usepackage{amsmath}
+
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{1em}} % custom section break
 
@@ -65,6 +67,21 @@ Let us focus on functions.
     $$\sin(2x) = 2\sin(x)\cos(x)$$
     therefore, we can say that
     $$\sin(4x) = 4\sin^2(x)\cos^2(x)$$
+
+    \subsection{$$n$$ Angle Identities}
+    Using De Moivre's theorem it is known that
+    \begin{align}
+        (|z|\cos{\theta})^n=|z|^n\cos{n\theta}
+    \end{align}
+    The identity $\cos{\theta}=\sin{\left(\frac{\pi}{2}-\theta \right)}$ can be applied to deduce identites for $\sin$.
+    \begin{align}
+        \left(|z|\sin{\left(\frac{\pi}{2}-\theta \right)}\right)^n=|z|^n\sin{\left(\frac{\pi}{2}-\theta \right)}
+    \end{align}
+    Since the unit circle has radius 1, $z=1$. Hence, the following identities are derived.
+    \begin{align}
+        \cos{n\theta}=(|n|\cos{\theta})^n\qquad \sin{n\theta}=\left(|n|\sin{\left(\frac{\pi}{2}-\theta \right)}\right)^n
+    \end{align}
+    How useful!
 
 
 
