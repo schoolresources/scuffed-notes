@@ -1,0 +1,59 @@
+\documentclass[a4paper]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{mhchem}
+% parskip also adds a bit of space after each paragrah
+\usepackage{parskip} % needed for un-doing paragraph indentation
+%\usepackage{titlesec}
+
+
+% Removes equation label numbers
+\makeatletter
+\renewcommand\tagform@[1]{}
+\makeatother
+
+% Theorems and stuff
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{question}{Question}
+
+
+% Custom commands
+\newcommand{\sectionSpace}{\vspace{1em}} % custom section break
+
+%\setlength{\parindent}{0pt} % another way to have 0 paragraph indent
+% \par for newlines works as well
+
+
+\begin{document}
+\title{INTENTIONALLY SCUFFED NOTES:\\ CHEMISTRY}
+\author{Several Authors}
+\maketitle
+\newpage
+
+%\normalsize % reset \Large{} text. Otherwise, put this into a frame
+
+
+\begin{center}
+    \Large 
+    \textbf{
+        REMEMBER THAT AT ANY POINT THESE NOTES MAY CONTAIN INTENTIONAL ERRORS. WE ARE NOT LIABLE FOR ANYTHING} 
+\end{center}
+
+\sectionSpace
+\section{Introduction}
+    Edit later.
+
+
+\sectionSpace
+\section{Atomic Structure}
+    \subsection{Nuclide Notation}
+    \ce{^{A}_{Z}X}
+    %$^{A}_{Z}X$ % This looks messy so use \ce 
+    
+
+\end{document}
