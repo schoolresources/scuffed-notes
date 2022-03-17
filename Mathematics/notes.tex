@@ -24,7 +24,8 @@
 
 
 % Custom commands
-\newcommand{\sectionSpace}{\vspace{1em}} % custom section break
+\newcommand{\sectionSpace}{\vspace{2em}} % custom section break
+\newcommand{\subsectionSpace}{\vspace{0.5em}}
 
 %\setlength{\parindent}{0pt} % another way to have 0 paragraph indent
 % \par for newlines works as well
@@ -58,6 +59,7 @@
 
     We then conclude that by principle of mathematical induction, what we said is true because we proved it to be. Simple as that.
 
+    \subsectionSpace
     \subsection{Sequences and Series}
 
 
@@ -72,9 +74,9 @@ Let us focus on functions.
         \item Slope-intercept form: $y = mx + c$
     \end{itemize}
 
-
+    \subsectionSpace
     \subsection{Dealing With Infinity}
-    For functions such as the inverse function ($1/x$), then x cannot be zero otherwise we will have $1/0 = \infty$. 
+    For functions such as the inverse function ($1/x$), then $x$ cannot be zero otherwise we will have $1/0 = \infty$. 
     \begin{question}
         Why is $1/0 = \infty$?
     \end{question}
@@ -87,10 +89,12 @@ Let us focus on functions.
     $$\tan^2\theta + 1 = \sec^2\theta$$
     $$\cot^2\theta + 1 = \csc^2\theta$$
 
+    \subsectionSpace
     \subsection{Angle Sum and Difference}
     $$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$$
     $$\cos(A \pm B) = \cos A \cos B \pm \sin A \sin B$$
 
+    \subsectionSpace
     \subsection{Double Angle Identities}
     Double angle identities are derived from the angle and sum difference equations. 
 
@@ -99,6 +103,7 @@ Let us focus on functions.
     therefore, we can say that
     $$\sin(4x) = 4\sin^2(x)\cos^2(x)$$
 
+    \subsectionSpace
     \subsection{$n$ Angle Identities}
     Using De Moivre's theorem it is known that
     \begin{align}
@@ -136,12 +141,28 @@ Let us focus on functions.
 \sectionSpace
 \section{Integration}
     \subsection{Integration Rules}
-    $$\int k\,\dd{x} = kx + c$$
-    Therefore,
-    $$\int i + j + k\,\dd{x} = ix + jx + kx + 3c$$
+    $$\int k\,\dd{x} = kx + C$$
+        \subsubsection{The Sum Rule}
+        $$\int i + j + k\,\dd{x} = \int i\,\dd{x} + \int j\,\dd{x} + \int k\,\dd{x} = ix + jx + kx + 3C$$
 
+        \subsubsection{The Difference Rule}
+        Similar to the sum rule, the difference rule is essentially the sum of additive inverses:
+        $$\int i - j - k\,\dd{x} = \int i\,\dd{x} - \int j\,\dd{x} - \int k\,\dd{x} = ix - jx - kx - 3C$$
+
+    \subsectionSpace
     \subsection{Substitution}
-    \subsection{By Parts}
+    
+    \subsectionSpace
+    \subsection{By Parts (Product Rule)}
+    Integration by parts is when you split it to solve by parts. Suppose we have a function $f(x) = u(x)v(x)$ which we want to find the integral of:
+    $$\int f(x) \,\dd{x} = \int u(x)v(x) \,\dd{x}$$
+    We can use integration by parts, also known as the product rule of integrals:
+    $$\int u(x)v(x)\,\dd{x} = \int u(x)\,\dd{x}\times \int v(x)\,\dd{x}$$
+
+    \begin{exercise}
+        Solve $\int x^2\,\dd{x}$ using integration by parts.
+    \end{exercise}
+
 
 
 \sectionSpace
@@ -149,7 +170,7 @@ Let us focus on functions.
     \subsection{Euler's Form}
     We know that
     $$\sin^2\theta + \cos^2\theta = 1$$
-    We also know the famous equation known as Euler's formula. The imaginary number one. With the pi. No, not the one with polyhedrons. To be more precise, we mean Euler's identity. The ``beautiful" equation.
+    We also know the famous equation known as Euler's formula. The imaginary number one. With the pi. No, not the one with polyhedrons. To be more precise, we mean Euler's identity, the ``beautiful" equation.
     $$e^{i\pi} + 1 = 0$$
 
     Therefore, we can then conclude that:
