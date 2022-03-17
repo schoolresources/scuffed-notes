@@ -6,6 +6,7 @@
 \usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
 \usepackage{parskip} % needed for un-doing paragraph indentation
+\usepackage{physics}
 %\usepackage{titlesec}
 
 
@@ -16,9 +17,10 @@
 
 % Theorems and stuff
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
-\newtheorem{question}{Question}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{question}{Question}[section]
 
 
 % Custom commands
@@ -72,7 +74,7 @@ Let us focus on functions.
 
 
     \subsection{Dealing With Infinity}
-    For functions such as the inverse function (1/x), then x cannot be zero otherwise we will have $1/0 = \infty$. 
+    For functions such as the inverse function ($1/x$), then x cannot be zero otherwise we will have $1/0 = \infty$. 
     \begin{question}
         Why is $1/0 = \infty$?
     \end{question}
@@ -80,6 +82,11 @@ Let us focus on functions.
 
 \sectionSpace
 \section{Trigonometry}
+    \subsection{Pythagorean Theorem}
+    $$\sin^2\theta + \cos^2\theta= 1$$
+    $$\tan^2\theta + 1 = \sec^2\theta$$
+    $$\cot^2\theta + 1 = \csc^2\theta$$
+
     \subsection{Angle Sum and Difference}
     $$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$$
     $$\cos(A \pm B) = \cos A \cos B \pm \sin A \sin B$$
@@ -109,13 +116,30 @@ Let us focus on functions.
 
 
 
+\sectionSpace
+\section{Limits}
+    \subsection{Trigonometric Limits}
+    $$\lim_{\theta \to 0} \frac{\sin(\theta)}{\theta} = 1$$
 
+    $$\lim_{\theta \to 0} \sin^{\theta}(\theta) = 1$$
+
+    $$\lim_{\theta \to \infty} \sin^{\theta}(\theta) = 0$$
+
+    \begin{question}
+        What would $\lim_{\theta \to 0} \cos^{\theta}(\theta)$ be equal to?
+    \end{question}
 
 \sectionSpace
 \section{Calculus of the Differential Kind}
 
+
 \sectionSpace
 \section{Integration}
+    \subsection{Integration Rules}
+    $$\int k\,\dd{x} = kx + c$$
+    Therefore,
+    $$\int i + j + k\,\dd{x} = ix + jx + kx + 3c$$
+
     \subsection{Substitution}
     \subsection{By Parts}
 
@@ -124,8 +148,8 @@ Let us focus on functions.
 \section{Complex Numbers}
     \subsection{Euler's Form}
     We know that
-    $$\sin^\theta + \cos^2\theta = 1$$
-    We also know the famous equation known as Euler's formula. The imaginary number one. With the pi. No, not the one with polyhedrons. To be more precise, we mean Euler's identity. The "beautiful" equation.
+    $$\sin^2\theta + \cos^2\theta = 1$$
+    We also know the famous equation known as Euler's formula. The imaginary number one. With the pi. No, not the one with polyhedrons. To be more precise, we mean Euler's identity. The ``beautiful" equation.
     $$e^{i\pi} + 1 = 0$$
 
     Therefore, we can then conclude that:
