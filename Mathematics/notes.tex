@@ -85,9 +85,9 @@ Let us focus on functions.
 \sectionSpace
 \section{Trigonometry}
     \subsection{Pythagorean Theorem}
-    $$\sin^2\theta + \cos^2\theta= 1$$
-    $$\tan^2\theta + 1 = \sec^2\theta$$
-    $$\cot^2\theta + 1 = \csc^2\theta$$
+    \[\sin^2\theta + \cos^2\theta= 1\]
+    \[\tan^2\theta + 1 = \sec^2\theta\]
+    \[\cot^2\theta + 1 = \csc^2\theta\]
 
     \subsectionSpace
     \subsection{Angle Sum and Difference}
@@ -128,7 +128,7 @@ Let us focus on functions.
 
     $$\lim_{\theta \to 0} \sin^{\theta}(\theta) = 1$$
 
-    $$\lim_{\theta \to \infty} \sin^{\theta}(\theta) = 0$$
+    \[\lim_{\theta \to \infty} \sin^{\theta}(\theta) = 0\]
 
     \begin{question}
         What would $\lim_{\theta \to 0} \cos^{\theta}(\theta)$ be equal to?
@@ -136,6 +136,19 @@ Let us focus on functions.
 
 \sectionSpace
 \section{Calculus of the Differential Kind}
+    \subsection{Deriving from First Principles}
+    Deriving from first principles is the fundamentals of calculus. In fact, we refer to this as the fundamental theorem of calculus.
+
+        \subsubsection{First Principles with $\sin(x)$}
+        Recall the formula for first principles:
+        \[f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\]
+        \begin{align}
+            \dv{\sin(x)}{x} & = \lim_{h \to 0} \frac{\sin(x+h) - \sin(x)}{h} \\
+            & = \lim_{h \to 0} \frac{\sin{x}\cosh + \cos{x}\sinh - \sin{x}}{h} \\
+            & = \lim_{h \to 0} \frac{\sin{x}(\cosh - 1) + \cos{x}\sinh}{h} \\
+            & = \sin{x}\lim_{h \to 0}\frac{\cosh - 1}{h} + \cos{x}\lim_{h \to 0} \frac{\sinh}{h} \\
+            & = \cos{x}
+        \end{align}
 
 
 \sectionSpace
