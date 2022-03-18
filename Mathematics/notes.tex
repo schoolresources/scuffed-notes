@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 
 % Packages
-\usepackage{amsmath}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{amsthm}
 \usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
@@ -16,16 +16,41 @@
 \makeatother
 
 % Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 \newtheorem{exercise}{Exercise}[section]
 \newtheorem{question}{Question}[section]
 
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
+
 
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{2em}} % custom section break
 \newcommand{\subsectionSpace}{\vspace{0.5em}}
+
+% Common shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+
+% Sometimes helpful macros
+\newcommand{\func}[3]{#1\colon#2\to#3}
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+
 
 %\setlength{\parindent}{0pt} % another way to have 0 paragraph indent
 % \par for newlines works as well
@@ -36,9 +61,6 @@
 \author{Several Authors}
 \maketitle
 \newpage
-
-%\normalsize % reset \Large{} text. Otherwise, put this into a frame
-
 
 \begin{center}
     \Large 
@@ -55,9 +77,9 @@
 \sectionSpace
 \section{Proof by Induction}
     \subsection{The Principle of Mathematical Induction}
-    When inducting, we must follow strict protocols. We first have the initial proposition (usually $P(1)$) where we must prove that LHS = RHS. Then we prove the kth case, then the k+1 case. 
+    When inducting, we must follow strict protocols. We first have the initial proposition (usually $P(1)$) where we must prove that LHS = RHS. Then we prove the kth case, then we assume the k+1th case to be true. 
 
-    We then conclude that by principle of mathematical induction, what we said is true because we proved it to be. Simple as that.
+    We can then conclude that by principle of mathematical induction, what we said is true because we proved and then assumed it to be. Simple as that.
 
     \subsectionSpace
     \subsection{Sequences and Series}
@@ -177,6 +199,47 @@ Let us focus on functions.
     \end{exercise}
 
 
+\sectionSpace
+\section{Further Calculus}
+    \subsection{Oily-Macaroni Contant}
+    The Oily-Macaroni constant is a mathematical constant denoted by gamma ($\gamma$).
+    \begin{align}
+        \gamma & = \lim_{n \to \infty} \left(-\log n + \sum_{k=1}^{n}{\frac{1}{k}}\right) \\
+        & = \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}
+    \end{align}
+    \subsectionSpace
+    \begin{theorem}
+     $\gamma$ is irrational.
+    \end{theorem}
+    Proof.
+    $$\gamma= \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}$$
+    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\int_{1}^{\infty} \frac{1}{x}\,\dd{x}$$
+    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\ln (2)$$
+    $$=\left(\sum_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)$$
+    
+    Let $P(n): \sum\limits_{i=1}^{n} \frac{1}{i} =\frac{p}{q}\forall n\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime, i.e. $\sum\limits_{i=1}^{n} \frac{1}{i}$ is rational.
+    
+    Base case:
+    $$P(1): \sum\limits_{i=1}^{1} \frac{1}{i}=\frac{1}{1}$$
+    $$\therefore P(1) \text{ is true.}$$
+    
+    Assume $P(k): \sum\limits_{i=1}^{k} \frac{1}{i} =\frac{p}{q}\forall k\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime.
+    
+    Induction step:
+    $$P(k+1):\sum\limits_{i=1}^{k+1} \frac{1}{i}$$
+    $$=\frac{1}{k+1}+\sum\limits_{i=1}^{k} \frac{1}{i}$$
+    $$=\frac{1}{k+1}+\frac{p}{q}\text{    [From P(k)]}$$
+    $$=\frac{pk+p+q}{qk+q}$$
+    $$\therefore P(k)\implies P(k+1)$$
+    
+    $$\because P(1)\text{ is true and }P(k)\implies P(k+1)\forall k\in\mathbb{Z}^+$$
+    $$\therefore\text{By induction, }P(n)\text{ is true.}$$
+    
+Therefore, it trivially follows that $\sum\limits_{i=1}^{\infty} \frac{1}{i}$ is rational.
+
+However, since $\ln(2)$ is irrational, and because the difference of a rational number and an irrational number is always irrational, this means that $\left(\sum\limits_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)=\gamma$ is irrational.
+\qed
+
 
 \sectionSpace
 \section{Complex Numbers}
@@ -197,8 +260,25 @@ Let us focus on functions.
 
     What a beautiful conclusion!
 
+    \subsection{The Cauchy-Riemann Equations (Essential Maths Knowledge)}
+    This is essential knowledge when dealing with the complex world.
+
+    The Cauchy-Riemann Equations state that $\forall f:\mathbb{C}\to\mathbb{C}$ where $f:x+iy\mapsto u(x,y)+v(x,y)$:
+    $$f \text{ is holomorphic}\Leftrightarrow \frac {\partial u}{\partial x}=\frac {\partial v}{\partial y} \text { and }\frac {\partial u}{\partial y}=-{\frac {\partial v}{\partial x}}$$
+    The Cauchy-Riemann Equations can also be written using Wirtinger derivatives, which are defined as follows:
+    $$\frac {\partial }{\partial z}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}-i{\frac {\partial }{\partial y}}\right)$$
+    $${\frac {\partial }{\partial {\bar {z}}}}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}+i{\frac {\partial }{\partial y}}\right)$$
+    Therefore, it is trivial to see that for any holomorphic function $f$:
+    $${\frac {\partial }{\partial {\bar {z}}}}=0$$
+    \begin{exercise}
+        Prove the Cauchy-Riemann Equations using first principles.
+    \end{exercise}
+
 \sectionSpace
 \section{Linear Algebruh}
-    \subsection{Vectors}
+    \subsection{Equation of a line}
+    Linear algebra is named after its most important mathematical object, the linear algebruh function. As you already know, linear function can be written using the slope-intercept form $y=ax+b$. The $a$ determines the slope of the line and $b$ determined the $y$-intercept.
+
+    Although we have covered this back in Chapter 3, this is a deeper dive into linear algebra.
 
 \end{document}
