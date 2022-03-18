@@ -2,6 +2,7 @@
 
 % Packages
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{amsthm}
 \usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
 \usepackage{parskip} % needed for un-doing paragraph indentation
@@ -20,14 +21,13 @@
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{corollary}{Corollary}[section]
 
+% Theorems and stuff
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 \newtheorem{exercise}{Exercise}[section]
 \newtheorem{question}{Question}[section]
 
-\theoremstyle{remark}
-\newtheorem{note}{Note}[section]
 
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{2em}} % custom section break
@@ -205,6 +205,38 @@ Let us focus on functions.
         \gamma & = \lim_{n \to \infty} \left(-\log n + \sum_{k=1}^{n}{\frac{1}{k}}\right) \\
         & = \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}
     \end{align}
+    \subsectionSpace
+    \begin{theorem}
+     $\gamma$ is irrational.
+    \end{theorem}
+    Proof.
+    $$\gamma= \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}$$
+    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\int_{1}^{\infty} \frac{1}{x}\,\dd{x}$$
+    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\ln (2)$$
+    $$=\left(\sum_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)$$
+    
+    Let $P(n): \sum\limits_{i=1}^{n} \frac{1}{i} =\frac{p}{q}\forall n\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime, i.e. $\sum\limits_{i=1}^{n} \frac{1}{i}$ is rational.
+    
+    Base case:
+    $$P(1): \sum\limits_{i=1}^{1} \frac{1}{i}=\frac{1}{1}$$
+    $$\therefore P(1) \text{ is true.}$$
+    
+    Assume $P(k): \sum\limits_{i=1}^{k} \frac{1}{i} =\frac{p}{q}\forall k\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime.
+    
+    Induction step:
+    $$P(k+1):\sum\limits_{i=1}^{k+1} \frac{1}{i}$$
+    $$=\frac{1}{k+1}+\sum\limits_{i=1}^{k} \frac{1}{i}$$
+    $$=\frac{1}{k+1}+\frac{p}{q}\text{    [From P(k)]}$$
+    $$=\frac{pk+p+q}{qk+q}$$
+    $$\therefore P(k)\implies P(k+1)$$
+    
+    $$\because P(1)\text{ is true and }P(k)\implies P(k+1)\forall k\in\mathbb{Z}^+$$
+    $$\therefore\text{By induction, }P(n)\text{ is true.}$$
+    
+Therefore, it trivially follows that $\sum\limits_{i=1}^{\infty} \frac{1}{i}$ is rational.
+
+However, since $\ln(2)$ is irrational, and because the difference of a rational number and an irrational number is always irrational, this means that $\left(\sum\limits_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)=\gamma$ is irrational.
+\qed
 
 
 \sectionSpace
