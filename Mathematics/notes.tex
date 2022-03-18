@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 
 % Packages
-\usepackage{amsmath}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{amsthm}
 \usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
@@ -9,29 +9,6 @@
 \usepackage{physics}
 %\usepackage{titlesec}
 
-\usepackage[warnunknown, fasterrors, mathletters]{ucs}
-\usepackage[utf8x]{inputenc}
-
-% Always typeset math in display style
-\everymath{\displaystyle}
-
-% Use a larger font size
-\usepackage[fontsize=14pt]{scrextend}
-
-% Standard mathematical typesetting packages
-\usepackage{amsfonts, amsthm, amsmath, amssymb}
-\usepackage{mathtools}  % Extension to amsmath
-
-% Symbol and utility packages
-\usepackage{cancel, textcomp}
-\usepackage[mathscr]{euscript}
-\usepackage[nointegrals]{wasysym}
-
-% Extras
-\usepackage{physics}  % Lots of useful shortcuts and macros
-\usepackage{tikz-cd}  % For drawing commutative diagrams easily
-\usepackage{color}  % Add some colour to life
-\usepackage{microtype}  % Minature font tweaks
 
 % Common shortcuts
 \def\mbb#1{\mathbb{#1}}
@@ -48,16 +25,6 @@
 \newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
-
-% Some standard theorem definitions
-\newtheorem{Theorem}{Theorem}
-\newtheorem{Proposition}{Theorem}
-\newtheorem{Lemma}[Theorem]{Lemma}
-\newtheorem{Corollary}[Theorem]{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{Definition}[Theorem]{Definition}
-
 
 
 % Removes equation label numbers
@@ -247,23 +214,25 @@ Let us focus on functions.
 
     What a beautiful conclusion!
 
-\subsection{The Cauchy-Riemann Equations (11 Essential Maths Topic)}
-The Cauchy-Riemann Equations state that $\forall f:\mathbb{C}\to\mathbb{C}$ where $f:x+iy\mapsto u(x,y)+v(x,y)$:
-$$f \text{ is holomorphic}\Leftrightarrow \frac {\partial u}{\partial x}=\frac {\partial v}{\partial y} \text { and }\frac {\partial u}{\partial y}=-{\frac {\partial v}{\partial x}}$$
-The Cauchy-Riemann Equations can also be written using Wirtinger derivatives, which are defined as follows:
-$$\frac {\partial }{\partial z}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}-i{\frac {\partial }{\partial y}}\right)$$
-$${\frac {\partial }{\partial {\bar {z}}}}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}+i{\frac {\partial }{\partial y}}\right)$$
-Therefore, it is trivial to see that for any holomorphic function $f$:
-$${\frac {\partial }{\partial {\bar {z}}}}=0$$
-\begin{exercise}
-    Prove the Cauchy-Riemann Equations using first principles.
-\end{exercise}
+    \subsection{The Cauchy-Riemann Equations (11 Essential Maths Topic)}
+    The Cauchy-Riemann Equations state that $\forall f:\mathbb{C}\to\mathbb{C}$ where $f:x+iy\mapsto u(x,y)+v(x,y)$:
+    $$f \text{ is holomorphic}\Leftrightarrow \frac {\partial u}{\partial x}=\frac {\partial v}{\partial y} \text { and }\frac {\partial u}{\partial y}=-{\frac {\partial v}{\partial x}}$$
+    The Cauchy-Riemann Equations can also be written using Wirtinger derivatives, which are defined as follows:
+    $$\frac {\partial }{\partial z}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}-i{\frac {\partial }{\partial y}}\right)$$
+    $${\frac {\partial }{\partial {\bar {z}}}}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}+i{\frac {\partial }{\partial y}}\right)$$
+    Therefore, it is trivial to see that for any holomorphic function $f$:
+    $${\frac {\partial }{\partial {\bar {z}}}}=0$$
+    \begin{exercise}
+        Prove the Cauchy-Riemann Equations using first principles.
+    \end{exercise}
 
 \sectionSpace
 \section{Linear Algebra}
     \subsection{Equation of a line}
-    Linear algebra is named after its most important mathematical object, the linear algebruh function.\\\\
-    As you already know, linear function can be written using the slope-intercept form $y=ax+b$.\\\\
+    Linear algebra is named after its most important mathematical object, the linear algebruh function.
+
+    As you already know, linear function can be written using the slope-intercept form $y=ax+b$.
+
     The $a$ determines the slope of the line and $b$ determined the $y$-intercept.
 
 \end{document}
