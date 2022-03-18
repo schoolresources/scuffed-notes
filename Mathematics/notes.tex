@@ -2,7 +2,6 @@
 
 % Packages
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
-\usepackage{amsthm}
 \usepackage[margin=1.9cm]{geometry}
 % parskip also adds a bit of space after each paragrah
 \usepackage{parskip} % needed for un-doing paragraph indentation
@@ -16,12 +15,19 @@
 \makeatother
 
 % Theorems and stuff
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 \newtheorem{exercise}{Exercise}[section]
 \newtheorem{question}{Question}[section]
 
+\theoremstyle{remark}
+\newtheorem{note}{Note}[section]
 
 % Custom commands
 \newcommand{\sectionSpace}{\vspace{2em}} % custom section break
