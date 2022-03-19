@@ -238,15 +238,19 @@ Let us focus on functions.
         \gamma & = \lim_{n \to \infty} \left(-\log n + \sum_{k=1}^{n}{\frac{1}{k}}\right) \\
         & = \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}
     \end{align}
-    \subsectionSpace
+    
+    \vspace{0.5em}
     \begin{theorem}
      $\gamma$ is irrational.
     \end{theorem}
     Proof.
-    $$\gamma= \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x}$$
-    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\int_{1}^{\infty} \frac{1}{x}\,\dd{x}$$
-    $$=\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\ln (2)$$
-    $$=\left(\sum_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)$$
+    \begin{align}
+        \gamma & = \int_{1}^{\infty} \left(-\frac{1}{x}+\frac{1}{\lfloor x \rfloor}\right)\,\dd{x} \\
+        & =\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\int_{1}^{\infty} \frac{1}{x}\,\dd{x} \\
+        & =\int_{1}^{\infty} \frac{1}{\lfloor x \rfloor}\,\dd{x}-\ln (2) \\
+        & =\left(\sum_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)
+    \end{align}
+    
     
     Let $P(n): \sum\limits_{i=1}^{n} \frac{1}{i} =\frac{p}{q}\forall n\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime, i.e. $\sum\limits_{i=1}^{n} \frac{1}{i}$ is rational.
     
@@ -257,10 +261,13 @@ Let us focus on functions.
     Assume $P(k): \sum\limits_{i=1}^{k} \frac{1}{i} =\frac{p}{q}\forall k\in\mathbb{Z}^+$ where $p,q \in\mathbb{Z}^+\wedge p, q$ are coprime.
     
     Induction step:
-    $$P(k+1):\sum\limits_{i=1}^{k+1} \frac{1}{i}$$
-    $$=\frac{1}{k+1}+\sum\limits_{i=1}^{k} \frac{1}{i}$$
-    $$=\frac{1}{k+1}+\frac{p}{q}\text{    [From P(k)]}$$
-    $$=\frac{pk+p+q}{qk+q}$$
+    \begin{align}
+        & P(k+1):\sum\limits_{i=1}^{k+1} \frac{1}{i} \\
+        & =\frac{1}{k+1}+\sum\limits_{i=1}^{k} \frac{1}{i} \\
+        & =\frac{1}{k+1}+\frac{p}{q}\text{\quad [From P(k)]} \\
+        & =\frac{pk+p+q}{qk+q}
+    \end{align}
+    
     $$\therefore P(k)\implies P(k+1)$$
     
     $$\because P(1)\text{ is true and }P(k)\implies P(k+1)\forall k\in\mathbb{Z}^+$$
@@ -268,7 +275,7 @@ Let us focus on functions.
     
 Therefore, it trivially follows that $\sum\limits_{i=1}^{\infty} \frac{1}{i}$ is rational.
 
-However, since $\ln(2)$ is irrational, and because the difference of a rational number and an irrational number is always irrational, this means that $\left(\sum\limits_{i=1}^{\infty} \frac{1}{i}\right)-\ln (2)=\gamma$ is irrational.
+However, since $\ln(2)$ is irrational, and because the difference of a rational number and an irrational number is always irrational, this means that $\left(\sum\limits_{i=1}^{\infty} \frac{1}{i}\right)-\ln(2)=\gamma$ is irrational.
 \qed
 
 
@@ -290,17 +297,20 @@ However, since $\ln(2)$ is irrational, and because the difference of a rational 
     $$-e^{i\theta} = 1 \Rightarrow e^{i\theta} = -1$$
 
     What a beautiful conclusion!
-
+    
+    \subsectionSpace
     \subsection{The Cauchy-Riemann Equations (Essential Maths Knowledge)}
     This is essential knowledge when dealing with the complex world.
 
     The Cauchy-Riemann Equations state that $\forall f:\mathbb{C}\to\mathbb{C}$ where $f:x+iy\mapsto u(x,y)+v(x,y)$:
-    $$f \text{ is holomorphic}\Leftrightarrow \frac {\partial u}{\partial x}=\frac {\partial v}{\partial y} \text { and }\frac {\partial u}{\partial y}=-{\frac {\partial v}{\partial x}}$$
+    $$f \text{ is holomorphic}\Leftrightarrow \pdv{u}{x} = \pdv{v}{y} \text{and}\pdv{u}{y} = -\pdv{v}{x}$$
     The Cauchy-Riemann Equations can also be written using Wirtinger derivatives, which are defined as follows:
-    $$\frac {\partial }{\partial z}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}-i{\frac {\partial }{\partial y}}\right)$$
-    $${\frac {\partial }{\partial {\bar {z}}}}={\frac {1}{2}}\left({\frac {\partial }{\partial x}}+i{\frac {\partial }{\partial y}}\right)$$
+    \begin{align}
+        \pdv{z} & = {\frac {1}{2}}\left(\pdv{x}-i\pdv{y}\right) \\
+        \pdv{\bar z} & = {\frac {1}{2}}\left(\pdv{x}+i\pdv{y}\right)
+    \end{align}
     Therefore, it is trivial to see that for any holomorphic function $f$:
-    $${\frac {\partial }{\partial {\bar {z}}}}=0$$
+    $$ \pdv{\bar z} = 0$$
     \begin{exercise}
         Prove the Cauchy-Riemann Equations using first principles.
     \end{exercise}
