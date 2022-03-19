@@ -3,12 +3,13 @@
 % Packages
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{amsthm}
+\usepackage{float}
 \usepackage[margin=1.9cm]{geometry}
+\usepackage[hidelinks]{hyperref}
 % parskip also adds a bit of space after each paragrah
 \usepackage{parskip} % needed for un-doing paragraph indentation
 \usepackage{physics}
 %\usepackage{titlesec}
-\usepackage{float}
 
 % Removes equation label numbers
 \makeatletter
@@ -60,8 +61,15 @@
 \title{INTENTIONALLY SCUFFED NOTES}
 \author{Several Authors}
 \maketitle
+\pagenumbering{gobble}
 \newpage
 
+
+\tableofcontents
+\pagenumbering{roman}
+\newpage
+
+\pagenumbering{arabic}
 \begin{center}
     \Large 
     \textbf{
